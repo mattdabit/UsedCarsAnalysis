@@ -525,7 +525,7 @@ We will discus how the most important features affect the price of a vehicle.
       <td>Ridge</td>
       <td>4096.24</td>
       <td>4140.08</td>
-      <td>37080647.82/td>
+      <td>37080647.82</td>
       <td>37469295.35</td>
       <td>6089.39</td>
       <td>6121.21</td>
@@ -545,7 +545,7 @@ We will discus how the most important features affect the price of a vehicle.
       <td>RandomForest</td>
       <td>4262.12</td>
       <td>4285.24</td>
-      <td>40738091.59/td>
+      <td>40738091.59</td>
       <td>40839139.22</td>
       <td>6382.64</td>
       <td>6390.55</td>
