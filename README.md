@@ -2,6 +2,44 @@
 
 A repository focused on assessing the features that drive the price of a car and what consumers value in a used car
 
+## Table of Contents  
+
+- [Link to notebook](#link-to-notebook)
+- [Local Installation](#local-installation)
+- [About the Dataset](#about-the-dataset)
+- [Understanding the business](#understanding-the-business)
+- [Understanding the data](#understanding-the-data)
+   - [Anomalies in the data](#anomalies-in-the-data)
+   - [Imputation Results](#imputation-results)
+   - [Data loss summary](#data-loss-summary)
+   - [Univariate and Multivariate Analysis](#univariate-and-multivariate-analysis)
+      - [Price Univariate Analysis](#price-univariate-analysis)
+      - [Year Univariate Analysis](#year-univariate-analysis)
+      - [Analysis of Imputation effect: Comparing our Non Imputed Data with the Imputed data](#analysis-of-imputation-effect-comparing-our-non-imputed-data-with-the-imputed-data)
+      - [Popularity analysis](#popularity-analysis)
+      - [Popularity versus Price analysis](#popularity-versus-price-analysis)
+      - [State and Region analysis](#state-and-region-analysis)
+      - [Manufacturer analysis](#manufacturer-analysis)
+      - [Correlation Matrix](#correlation-matrix)
+- [Data Preparation](#data-preparation)
+   - [Cleaning and imputation](#cleaning-and-imputation)
+   - [Feature Engineering Analysis](#feature-engineering-analysis)
+      - [Introduction of new features](#introduction-of-new-features)
+      - [Correlation Matrix](#correlation-matrix)
+      - [Average Miles Per Year Analysis](#average-miles-per-year-analysis)
+      - [Age versus Average Price](#age-versus-average-price)
+      - [PCA analysis](#pca-analysis)
+   - [Selecting our features](#selecting-our-features)
+   - [Defining our transformers](#defining-our-transformers)
+- [Modeling](#modeling)
+- [Evaluation of models](#evaluation-of-models)
+   - [Metrics Comparison](#metrics-comparison)
+   - [Feature Importance](#feature-importance)
+   - [Model Iteration](#model-iteration)
+- [Deployment / Business Report](#deployment--business-report)
+   - [Key features that drive the price of a car](#key-features-that-drive-the-price-of-a-car)
+- [Next Steps / Recommendations](#next-steps--recommendations)
+
 ## Link to notebook
 
 [Primary Notebook](https://github.com/mattdabit/UsedCarsAnalysis/blob/main/prompt_II.ipynb)
