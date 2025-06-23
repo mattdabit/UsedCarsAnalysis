@@ -614,3 +614,16 @@ All this said, the customer needs to like the vehicle if you want to land that s
 popular and that would satisfy the vast majority of customers. However, the stakeholders will miss out on connoisseurs
 who are willing to pay a premium for the vehicle they want. This all depends on how our stakeholders want to run their
 business. If they are looking to appease the masses, they should prioritize the trends that I outline above.
+
+## Next Steps / Recommendations
+These are not in any order, they are simply ideas I had throughout this analysis. 
+1. Ask stakeholder if used parts are in the dataset, if so, ask how to remove
+2. Utilize PCA finding and see if reducing our numerical column to 1 helps
+3. Create & evaluate models for different states/regions
+4. Create & evaluate vintage vehicle model
+5. Update dataset with sales through 2025 to avoid data drift.
+6. Utilize KNN for imputation
+7. Compare with other existing models
+8. Explore collecting more features, would like miles per gallon, safety score for example
+9. Analyze sentiment of vehicle type, fuel type by region
+   1. Intuition tells me that kind of feature will help our models
