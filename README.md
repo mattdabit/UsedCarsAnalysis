@@ -739,3 +739,4 @@ These are not in any order, they are simply ideas I had throughout this analysis
 8. Explore collecting more features, would like miles per gallon, safety score for example
 9. Analyze sentiment of vehicle type, fuel type by region
    1. Intuition tells me that kind of feature will help our models
+10. On the 5th model iteration, I removed entries under $500 dollars from the dataset and saw further improvement in the metrics for the models. However, without more business insight, I cannot in good faith remove this data. 
