@@ -277,12 +277,11 @@ given the lack of numerical features.
 ### Selecting our features
 
 I split our features into categorical and numerical features. Our numerical features included age, odometer and average
-miles per year. The rest of our columns were categorical. I also decided to use ordinal encoding for title status and
-condition as these features follow a natural order.
+miles per year. The rest of our columns were categorical.
 
 ### Defining our transformers
 
-I added four different transformers here. A polynomial transformer, two ordinal transformers and
+I added two different transformers here. A polynomial transformer and
 one hot encoder transformer.
 
 ## Modeling
@@ -408,6 +407,14 @@ I removed these and refitted the models.
 #### Model Iteration 3 Result
 
 The scores are far better now. Our test metrics dropped about 2000 dollars.
+
+#### Model Iteration 4
+
+After office hours, it was recommended to convert cylinders into an integer and ordinal encoding was wrong. 
+
+#### Model Iteration 4 Result
+
+The scores improved even further!!!
 
 #### Model Comparison Iteration 1 & 2
 
@@ -607,12 +614,79 @@ The Lasso model became our best model in terms of metrics, beating Ridge by 19 c
 With an RMSE of 6121.02 we can confidently recommend the Lasso model over the others.
 </p>
 
+
+#### Model Comparison Iteration 4
+
+<table>
+  <thead>
+    <tr>
+      <th>model_name</th>
+      <th>train_mae</th>
+      <th>test_mae</th>
+      <th>train_mse</th>
+      <th>test_mse</th>
+      <th>train_rmse</th>
+      <th>test_rmse</th>
+      <th>best_params</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LinearRegression</td>
+      <td>3848.02</td>
+      <td>3846.21</td>
+      <td>35227324.01</td>
+      <td>34864816.51</td>
+      <td>5935.26</td>
+      <td>5904.64</td>
+      <td>{'preprocessor__poly__degree': 2}</td>
+    </tr>
+    <tr>
+      <td>Ridge</td>
+      <td>3692.47</td>
+      <td>3693.95</td>
+      <td>33066617.82</td>
+      <td>32907125.79</td>
+      <td>5750.36</td>
+      <td>5736.47</td>
+      <td>{'Ridge__alpha': 10, 'preprocessor__poly__degree': 5}</td>
+    </tr>
+    <tr>
+      <td>Lasso</td>
+      <td>3834.18</td>
+      <td>3833.50</td>
+      <td>34834385.08</td>
+      <td>34574575.36</td>
+      <td>5902.07</td>
+      <td>5880.01</td>
+      <td>{'Lasso__alpha': 5, 'preprocessor__poly__degree': 3}</td>
+    </tr>
+    <tr>
+      <td>RandomForest</td>
+      <td>4178.10</td>
+      <td>4179.40</td>
+      <td>39662547.68</td>
+      <td>39306077.82</td>
+      <td>6297.82</td>
+      <td>6269.46</td>
+      <td>{'RandomForest__max_depth': 5, 'RandomForest__n_estimators': 100, 'preprocessor__poly__degree': 2}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+We improved our models even further in iteration 4. In this change, we made cylinders a numerical column and opted for
+one hot encoding for title status and condition. The Ridge model has reclaimed the throne as the best model. We still 
+maintain generalization while dropping about 300 points of error.
+</p>
+
+
 ## Deployment / Business Report
 
 ## Key features that drive the price of a car
 
 In the below image you will see the most important factors for the best performing price-predicting model. Across all
-models, the age, mileage and average miles per year had an enormous effect on determining price.
+models, the number of cylinders, age, mileage and average miles per year had an enormous effect on determining price.
 
 <img src="images/lasso_top_features.png" />
 
@@ -643,7 +717,7 @@ far below North Carolina's average purchase price.
 
 My recommendation to the stakeholders would be to look at what manufacturers, vehicle types are most popular. In the
 case of this dataset, that would be Ford, Chevrolet and Toyota for manufacturers and Sedans, SUVs and Trucks/Pickups for
-vehicle types. I would also recommend to our stakeholders to stock recent models in good to excellent condition,
+vehicle types. I would also recommend to our stakeholders to stock recent models in good to excellent condition;
 additionally, a clean title is always preferred. Lastly, the age and mileage of the vehicle is important when it comes
 to sales price. Age and mileage are positively correlated, meaning as a car gets older, the more miles on the odometer,
 as more miles accrue, the price drops.
